@@ -1,0 +1,17 @@
+1. /shop/member/show/ui/rechargeBalance.do 接口返回的数据没有success
+2. 暂时不处理MemberBasic的问题，等熊改好了在做
+3.
+
+问题
+1. 积分兑换是什么意思
+2. 哪里去添加积分兑换
+
+JTA问题
+1. /rest/shop/member/bonuspoints/ui/getProducts 有问题
+2. /rest/shop/member/bonuspoints/ui/getExchangeProductPage.do 有问题
+3. /rest/shop/member/bonuspoints/ui/getGradePage.do 有问题
+
+2018-8-16
+1. getInfos接口没有返回任何数据，这个接口的作用是什么，呈现什么数据？
+2. 解释一下每个接口的意思，这样方便一点开发
+

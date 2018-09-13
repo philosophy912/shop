@@ -1,0 +1,27 @@
+// 价格颜色
+price-color()
+  color rgb(255, 97, 25)
+// 灰色字体
+gray-color()
+  color rgb(140, 153, 159)
+// 背景颜色
+bgcolor()
+  background-color rgb(244, 244, 244)
+// 底部margin
+bottom()
+  margin-bottom 0px
+
+border-none()
+  &:after
+    display: none
+
+border-1px($color)
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ' '
