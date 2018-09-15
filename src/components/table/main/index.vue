@@ -101,5 +101,6 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-
+.table-main-wrapper
+  height 100%
 </style>

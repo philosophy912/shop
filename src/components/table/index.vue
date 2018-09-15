@@ -128,7 +128,7 @@ export default {
             }
             this.currentpage = param.envData.pageNo;
             this.pagesize = param.envData.pageSize;
-            this.total = resp[1].envData.realTotalRows;
+            this.total = resp[1].envData.totalRows;
             this.pagecount = resp[1].envData.totalPages;
             resolve();
           });
@@ -146,6 +146,18 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
+.table-wrapper
+  flex 1
+  width 100%
+  height 100%
+  .el-main
+    margin 0px
+    padding 5px
+  .el-header
+    margin-top 20px        
+  .el-footer
+    overflow hidden
+    width 100%
 
 
 </style>

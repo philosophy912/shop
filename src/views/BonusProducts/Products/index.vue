@@ -22,7 +22,7 @@ import sw from '@/components/switch';
 import { isNameValid, isIntegerValid } from '@/utils/validate';
 import { saveProduct } from '@/api/bonuspoints';
 import Logger from 'chivy';
-const log = new Logger('views/Categorys');
+const log = new Logger('views/BonusProducts/Products');
 export default {
   name: 'Products',
   components: {

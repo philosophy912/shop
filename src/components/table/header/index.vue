@@ -28,9 +28,6 @@ export default {
     };
   },
   props: {
-    /* input: {
-      type: String
-    }, */
     placeholder: {
       type: String,
       default: '请输入查询名称'
@@ -58,5 +55,12 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-
+.table-header-wrapper
+  display flex
+  .el-input
+    width 400px
+  .el-button
+    height 40px
+    width 80px
+    margin-left 5px
 </style>

@@ -2,9 +2,7 @@
   <div class='MemberListTest'>
     <page
       ref="page"
-      @delete="actionDelete"
-      @modify="modify"
-      @confirmModify="actionModify"
+      @exchange="exchange"
       :tabbar="tabbar"
       :table="table"
       :dialog="dialog"
@@ -24,7 +22,7 @@ import sw from '@/components/switch';
 import { isNameValid, isIntegerValid } from '@/utils/validate';
 import { saveProduct, deleteProduct } from '@/api/bonuspoints';
 import Logger from 'chivy';
-const log = new Logger('views/BonusProducts/BonusProducts');
+const log = new Logger('views/BonusProducts/BonusExchange');
 export default {
   name: 'BonusProducts',
   components: {
@@ -53,8 +51,7 @@ export default {
           {prop: 'createTime', label: '创建时间', width: "180"}
         ],
         opsbtns: [
-          {type: 'primary',  text: '修改积分', ops: 'modify'},
-          {type: 'danger', text: '取消兑换', ops: 'delete'}
+          {type: 'primary',  text: '兑换商品', ops: 'exchange'},
         ]
       },
       url: {
@@ -103,24 +100,8 @@ export default {
     refreshData() {
       this.$refs.page.refreshData();
     },
-    // 修改会员
-    modify(payload) {
-      this._showDialog(payload);
-    },
-    actionDelete(row) {
-      log.debug('row is ' + JSON.stringify(row));
-      deleteProduct({entityId: row.row.productId}).then(resp => {
-        this.$message.success('删除可兑换商品成功');
-        this.$refs.page.refreshData();
-      });
-    },
-    actionModify() {
-      log.debug('update data is ' + JSON.stringify(this._setParam(false)));
-      saveProduct(this._setParam(false)).then(resp => {
-        this.$message.success('修改商品兑换积分成功');
-        this.$refs.page.refreshData();
-      });
-      this.$refs.page.setDialogVisable(false);
+    exchange() {
+      log.debug('exchange');
     },
     _showDialog(payload) {
       this._setFormValue(payload.row);

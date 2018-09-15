@@ -56,10 +56,10 @@ export default {
       },
       table: {
         columns: [
-          {prop: 'name', label: '账号', width: '100',fixed: true},
+          {prop: 'name', label: '账号', width: '150',fixed: true},
           {prop: 'nick', label: '昵称', width: '100'},
           {prop: 'mobile', label: '手机号码', width: '120'},
-          {prop: 'email', label: '电子邮件', width: '120'},
+          {prop: 'email', label: '电子邮件', width: '200'},
           {prop: 'balance', label: '余额', width: '60'},
           {prop: 'valid', label: '是否激活', width: '120'},
           {prop: 'gradeName', label: '会员级别', width: '120'},

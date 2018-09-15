@@ -47,11 +47,11 @@ export default {
       },
       table: {
         columns: [
-          {prop: 'name', label: '会员号/手机号码/电子邮箱', width: "220", fixed: true},
+          {prop: 'name', label: "真实姓名", width: "220", fixed: true},
           {prop: 'genderStr', label: '性别', width: "60"},
           {prop: 'birthDay', label: '生日', width: "120"},
-          {prop: 'region', label: '所在区域', width: "120"},
-          {prop: 'address', label: '详细地址'},
+          {prop: 'region', label: '所在区域', width: "220"},
+          {prop: 'address', label: '详细地址', width: "300"},
           {prop: 'createTimeAsString', label: '创建时间', width: "180"}
         ],
         opsbtns: [
