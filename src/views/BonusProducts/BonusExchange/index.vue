@@ -24,7 +24,7 @@ import { saveProduct, deleteProduct } from '@/api/bonuspoints';
 import Logger from 'chivy';
 const log = new Logger('views/BonusProducts/BonusExchange');
 export default {
-  name: 'BonusProducts',
+  name: 'BonusExchange',
   components: {
     page,
     it,
@@ -58,10 +58,10 @@ export default {
         data: '/member/bonuspoints/ui/getProducts.do',
         page: '/member/bonuspoints/ui/getExchangeProductPage.do'
       },
-      deltips: '是否取消该商品为兑换商品',
+      deltips: '是否使用积分兑换商品',
       dialog: {
         action: 'confirm',
-        title: '',
+        modifyTitle: '',
         visible: false,
         footer: {
           left: {
@@ -73,17 +73,10 @@ export default {
         },
         form: {
           name: {
-            label: '名称',
+            label: '会员名',
             content: '',
             disable: true,
             modify: false
-          },
-          point: {
-            label: '兑换点数',
-            content: '',
-            disable: false,
-            must: true,
-            prop: 'point'
           },
           id: ''
         },
@@ -100,8 +93,9 @@ export default {
     refreshData() {
       this.$refs.page.refreshData();
     },
-    exchange() {
+    exchange(payload) {
       log.debug('exchange');
+      this._showDialog(payload);
     },
     _showDialog(payload) {
       this._setFormValue(payload.row);
@@ -121,7 +115,6 @@ export default {
     // 设置Form参数
     _setFormValue(row) {
       this.dialog.form.name.content = row.name;
-      this.dialog.form.point.content = row.point;
       this.dialog.form.id = row.productId;
     }
   }

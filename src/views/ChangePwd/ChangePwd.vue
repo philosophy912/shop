@@ -49,7 +49,7 @@ export default {
         page: '/member/show/ui/getMemberPage.do'
       },
       dialog: {
-        title: '会员充值',
+        title: '修改会员密码',
         visible: false,
         action: 'confirm',
         footer: {

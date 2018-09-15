@@ -8,7 +8,6 @@
       :tabbar="tabbar"
       :table="table"
       :dialog="dialog"
-      :deltips="deltips"
       :url="url">
       <it :input='dialog.form.name'></it>
       <it :input='dialog.form.point'></it>
@@ -64,7 +63,7 @@ export default {
       deltips: '是否取消该商品为兑换商品',
       dialog: {
         action: 'confirm',
-        title: '',
+        modifyTitle: '修改积分商品',
         visible: false,
         footer: {
           left: {

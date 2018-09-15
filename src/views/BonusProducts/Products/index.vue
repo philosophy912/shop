@@ -60,7 +60,7 @@ export default {
       },
       dialog: {
         action: '',
-        title: '',
+        modifyTitle: '添加可积分兑换商品',
         visible: false,
         footer: {
           left: {
