@@ -156,7 +156,7 @@ export default {
     del(data) {
       log.debug('del data is ' + JSON.stringify(data));
       this.popup.content = data;
-      this.popup.text = '是否删除[' + data.row.name + ']?';
+      this.$tools.isNotEmpty(this.dialog.deleteTitle) ? this.popup.text = this.dialog.deleteTitle : this.popup.text = '是否删除[' + data.row.name + ']?';
       this.popup.visible = true;
     },
     // 设置dialog的名字及按钮名

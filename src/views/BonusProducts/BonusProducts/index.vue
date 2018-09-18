@@ -64,6 +64,7 @@ export default {
       dialog: {
         action: 'confirm',
         modifyTitle: '修改积分商品',
+        deleteTitle: '是否取消该商品为兑换商品?',
         visible: false,
         footer: {
           left: {
