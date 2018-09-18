@@ -83,6 +83,12 @@ export default class Tools {
     } else if (column.label === '生日') {
       return Tools.isNotEmpty(cellValue) ? Tools.formatTime(cellValue, '-') : cellValue;
     }
+    if (column.label === '付款类型') {
+      return cellValue === 'BALANCE' ? '余额' : '现金';
+    }
+    if (column.label === '寄送方式') {
+      return cellValue === 'EXPRESS' ? '快递' : '自取';
+    }
     return cellValue;
   };
 

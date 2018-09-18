@@ -158,6 +158,4 @@ export default {
   .el-footer
     overflow hidden
     width 100%
-
-
 </style>
