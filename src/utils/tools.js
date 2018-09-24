@@ -89,6 +89,24 @@ export default class Tools {
     if (column.label === '寄送方式') {
       return cellValue === 'EXPRESS' ? '快递' : '自取';
     }
+    if (column.label === '订单状态') {
+      switch (cellValue) {
+        case 'SUCCESS':
+          return '等待发货';
+        case 'NOTPAY':
+          return '等待付款';
+        case 'REFUND':
+          return '已退款';
+        case 'CLOSED':
+          return '交易关闭';
+        case 'FINISHED':
+          return '完成订单';
+        case 'PAYERROR':
+          return '付款错误';
+        case 'DISPATCHED':
+          return '已发货';
+      }
+    }
     return cellValue;
   };
 

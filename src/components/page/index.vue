@@ -2,6 +2,7 @@
   <div class="page-wrapper">
     <tb
       ref='tb'
+      @format="format"
       @add="add"
       @find="find"
       @detail="detail"
@@ -86,6 +87,10 @@ export default {
     dig
   },
   methods: {
+    format(data) {
+      return data.cellValue;
+      // this.$emit('format', data);
+    },
     // 确认删除
     confirm(row) {
       this.popup.visible = false;

@@ -20,7 +20,7 @@
 
 <script type="text/ecmascript-6">
 export default {
-  name: 'Switch',
+  name: 'B-switch',
   data() {
     return {
       Default: this.$tools.setDefault

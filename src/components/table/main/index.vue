@@ -93,7 +93,10 @@ export default {
       log.debug('row is ' + JSON.stringify(row));
       this.$emit('operations', {ops, index, row});
     },
-    formatter(row, column, cellValue) {
+    formatter(row, column, cellValue, index) {
+      // 以传入的prop为名字，传出去进行校验
+      // const data = {row, column, cellValue, index}
+      // this.$emit('format', {row, column, cellValue, index});
       return this.$tools.formatit(row, column, cellValue);
     }
   }

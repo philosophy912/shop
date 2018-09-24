@@ -10,6 +10,7 @@
      </el-header>
      <el-main>
       <mn
+        @format="format"
         @operations="mainOps"
         :data="data"
         :columns="mainColumns"
@@ -86,6 +87,10 @@ export default {
     ft
   },
   methods: {
+    format(data) {
+      return data.cellValue;
+      // this.$emit('format', data);
+    },
     sizeChange(val) {
       this.request.envData.pageSize = val;
       this.GetDataAndPages(this.request);
@@ -113,7 +118,6 @@ export default {
       } else {
         this.$emit('operation', data);
       }
-
     },
     // 根据url以及相应的数据来获取数据并格式化表格
     GetDataAndPages(param) {

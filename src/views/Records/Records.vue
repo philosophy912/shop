@@ -2,6 +2,7 @@
   <div class='records-wrapper'>
     <page
       ref="page"
+      @format="format"
       @delete="actionDelete"
       @detail="detail"
       @modify="modify"
@@ -62,7 +63,7 @@ export default {
       table: {
         columns: [
           {prop: 'id', label: '订单号', width: "80"},
-          {prop: 'userName', label: '名称', width: "120"},
+          {prop: 'userName', label: '收件人', width: "120"},
           {prop: 'amount', label: '订单总价', width: "120"},
           {prop: 'cashOrBalance', label: '付款类型', width: "120"},
           {prop: 'status', label: '订单状态', width: "90"},
@@ -193,6 +194,11 @@ export default {
     };
   },
   methods: {
+    format(data) {
+      log.debug(' row is ' + JSON.stringify(data.row) + ' column is ' + JSON.stringify(data.column) + ' cellvalue is ' + data.cellValue + ' index is ' + data.index);
+      log.error(data.cellValue);
+      return data.cellValue;
+    },
     // 会员详情
     detail(payload) {
       log.debug('detail payload is ' + JSON.stringify(payload));
