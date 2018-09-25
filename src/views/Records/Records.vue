@@ -62,15 +62,15 @@ export default {
       },
       table: {
         columns: [
-          {prop: 'id', label: '订单号', width: "80"},
-          {prop: 'userName', label: '收件人', width: "120"},
-          {prop: 'amount', label: '订单总价', width: "120"},
-          {prop: 'cashOrBalance', label: '付款类型', width: "120"},
-          {prop: 'status', label: '订单状态', width: "90"},
-          {prop: 'deliveryLocation', label: '寄送地址', width: "250"},
-          {prop: 'deliveryMobile', label: '联系方式', width: "120"},
-          {prop: 'deliveryType', label: '寄送方式', width: "120"},
-          {prop: 'createTimeAsString', label: '创建时间', width: "180"}
+          {prop: 'id', label: '订单号'},
+          {prop: 'userName', label: '收件人'},
+          {prop: 'amount', label: '订单总价'},
+          {prop: 'cashOrBalance', label: '付款类型'},
+          {prop: 'status', label: '订单状态'},
+          {prop: 'deliveryLocation', label: '寄送地址'},
+          {prop: 'deliveryMobile', label: '联系方式'},
+          {prop: 'deliveryType', label: '寄送方式'},
+          {prop: 'createTimeAsString', label: '创建时间'}
         ]
       },
       url: {

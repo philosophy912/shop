@@ -3,7 +3,7 @@ var path = require('path')
 
 const ipaddress = ['127.0.0.1', '10.100.193.30', '10.100.193.59', 'www.tianbakery.store']
 const port = ['80', '15080', '21080']
-const server = 'http://' + ipaddress[0] + ':' + port[1]
+const server = 'http://' + ipaddress[1] + ':' + port[1]
 
 module.exports = {
   build: {
