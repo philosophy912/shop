@@ -22,7 +22,7 @@
         :align="Default(column.align, 'center')"
         :fixed="Default(column.fixed, false)">
         <template slot-scope="scope">
-          <el-button
+          <el-button  
             v-for="(btn, index) in opsbtns"
             :key="index"
             :type="Default(btn.type, 'primary')"
