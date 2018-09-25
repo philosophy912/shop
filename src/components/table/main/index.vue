@@ -7,8 +7,23 @@
       :resizable="resizable"
       style="width: 100%">
       <el-table-column
+        type="expand"
+        width="20">
+        <template slot-scope="props">
+          <el-form label-position="left" inline class="demo-table-expand">
+            <el-form-item label="商品名称">
+              <span>11</span>
+            </el-form-item>
+            <el-form-item label="所属店铺">
+              <span>22</span>
+            </el-form-item>
+          </el-form>
+        </template>
+      </el-table-column>
+      <el-table-column
         v-for="(col, index) in columns"
         :key="index"
+        :type="Default(col.type, '')"
         :fixed="Default(col.fixed, false)"
         :prop="col.prop"
         :formatter="formatter"
@@ -106,4 +121,13 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 .table-main-wrapper
   height 100%
+  .demo-table-expand
+    font-size 0
+    label
+      width 90px
+      color #99a9bf
+    .el-form-item
+      margin-right 0
+      margin-bottom 0
+      width 50%
 </style>

@@ -67,10 +67,10 @@ export default {
           {prop: 'amount', label: '订单总价'},
           {prop: 'cashOrBalance', label: '付款类型'},
           {prop: 'status', label: '订单状态'},
-          {prop: 'deliveryLocation', label: '寄送地址'},
+          {prop: 'deliveryLocation', label: '寄送地址', width: '240'},
           {prop: 'deliveryMobile', label: '联系方式'},
           {prop: 'deliveryType', label: '寄送方式'},
-          {prop: 'createTimeAsString', label: '创建时间'}
+          {prop: 'createTimeAsString', label: '创建时间', width: '200'}
         ]
       },
       url: {
