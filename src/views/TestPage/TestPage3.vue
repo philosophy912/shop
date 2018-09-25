@@ -1,37 +1,21 @@
 <template>
   <div class='TestPage'>
-    <el-table
-      :data="tableData"
-      style="width: 100%">
-      <el-table-column
-        prop="date"
-        label="日期"
-        width="680">
-      </el-table-column>
-      <el-table-column
-        prop="name"
-        label="姓名"
-        width="980">
-      </el-table-column>
-      <el-table-column
-        prop="address"
-        label="地址">
-      </el-table-column>
-    </el-table>
+    <tb
+      :tableData="tableData">
+    </tb>
   </div>
 </template>
 
 <script type='text/ecmascript=6'>
+import tb from './TestPage.vue';
 import Logger from 'chivy';
 const log = new Logger('views/TestPage');
 export default {
   name: 'TestPage',
-  props: {
-    tableData: {
-      type: Array
-    }
-  }
-  /* data() {
+  components: {
+    tb
+  },
+  data() {
     return {
       tableData: [{
         date: '2016-05-02',
@@ -51,7 +35,7 @@ export default {
         address: '上海市普陀区金沙江路 1516 弄'
       }]
     }
-  } */
+  }
 };
 </script>
 

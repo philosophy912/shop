@@ -9,7 +9,7 @@
       <el-table-column
         v-for="(col, index) in columns"
         :key="index"
-        :fixed="Default(col.fixed, true)"
+        :fixed="Default(col.fixed, false)"
         :prop="col.prop"
         :formatter="formatter"
         :align="Default(col.align, 'center')"
@@ -20,7 +20,7 @@
         :label="Default(column.label, '操作')"
         :width="Default(column.width, '240')"
         :align="Default(column.align, 'center')"
-        :fixed="Default(column.fixed, true)">
+        :fixed="Default(column.fixed, false)">
         <template slot-scope="scope">
           <el-button
             v-for="(btn, index) in opsbtns"
