@@ -148,7 +148,7 @@ export default class Tools {
       mobile: param(data.mobile),
       region: param(data.region),
       balance: param(data.balance),
-      birthday: param(data.birthDayStr.substring(0, 10)),
+      birthday: Tools.isNotEmpty(data.birthDayStr) ? param(data.birthDayStr.substring(0, 10)) : '',
       address: param(data.address),
       point: param(data.point),
       valid: param(data.valid)
