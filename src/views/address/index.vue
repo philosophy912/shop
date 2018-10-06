@@ -1,16 +1,16 @@
 <template>
-  <div class="address">
+  <div class="address-Wrapper">
     <addressList ref="address"></addressList>
   </div>
 </template>
 
 <script type="text/ecmascript=6">
-import addressList from '@/components/AddressList';
+import addressList from '@/components/addressList';
 import { mapState } from 'vuex';
 import Logger from 'chivy';
 const log = new Logger('views/address');
 export default {
-  name: 'PageAddress',
+  name: 'Tian-Address',
   data() {
     return {
     };

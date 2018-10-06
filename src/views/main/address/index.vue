@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="address-Wrapper">
     <addressList
       ref="address"
       :backPage="backPage">
@@ -8,12 +8,12 @@
 </template>
 
 <script type="text/ecmascript-6">
-import addressList from '@/components/AddressList';
+import addressList from '@/components/addressList';
 import { mapState } from 'vuex';
 import Logger from 'chivy';
 const log = new Logger('views/main/address');
 export default {
-  nname: 'MainAddress',
+  nname: 'Tian-Main-Address',
   data() {
     return {
       backPage: ''

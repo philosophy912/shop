@@ -42,10 +42,10 @@ import { mapState, mapGetters } from 'vuex';
 import Logger from 'chivy';
 const log = new Logger('views/card');
 export default {
-  name: 'Card',
+  name: 'Tian-Card',
   data() {
     return {
-      avatorurl: '../../../static/img/avator.jpg'
+      avatorurl: '/img/avator.jpg'
     };
   },
   beforeRouteEnter(to, from, next) {

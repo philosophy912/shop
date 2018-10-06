@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="coupon-Wrapper">
     <van-nav-bar
       title="订单列表"
       left-arrow
@@ -36,7 +36,7 @@ import { mapState } from 'vuex';
 import Logger from 'chivy';
 const log = new Logger('views/coupon');
 export default {
-  name: 'Coupon',
+  name: 'Tian-Coupon',
   data() {
     return {
       tabtitle: ['未使用', '已使用', '已失效'],
@@ -77,18 +77,19 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.van-nav-bar
-  position fixed
-  left 0px
-  top 0px
-  width 100%
-.van-tabs
-  margin-top 46px
-  .no_order
-    display flex
-    justify-content center
-    padding-top 50%
-    font-size 50px
-    color rgb(140, 153, 159)
+.coupon-Wrapper
+  .van-nav-bar
+    position fixed
+    left 0px
+    top 0px
+    width 100%
+  .van-tabs
+    margin-top 46px
+    .no_order
+      display flex
+      justify-content center
+      padding-top 50%
+      font-size 50px
+      color rgb(140, 153, 159)
 </style>
 

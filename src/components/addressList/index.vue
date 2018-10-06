@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="awddressList-Wrapper">
     <van-nav-bar
       :title="navBarTitle"
       left-arrow
@@ -26,7 +26,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script type="text/ecmascript=6">
 // 判断是否是会员，不是会员则只能添加一个地址，且无法保存地址，如果是会员则可以保存多个地址
 import { NavBar, Cell, CellGroup, AddressList, AddressEdit } from 'vant';
 import { mapState } from 'vuex';
@@ -34,7 +34,14 @@ import areaList from '@/utils/area';
 import Logger from 'chivy';
 const log = new Logger('components/addressList');
 export default {
-  name: 'AddressList',
+  name: 'Tian-Address-List',
+  components: {
+    [NavBar.name]: NavBar,
+    [Cell.name]: Cell,
+    [CellGroup.name]: CellGroup,
+    [AddressList.name]: AddressList,
+    [AddressEdit.name]: AddressEdit
+  },
   data() {
     return {
       // 显示页面
@@ -56,13 +63,6 @@ export default {
       type: String,
       default: 'order'
     }
-  },
-  components: {
-    [NavBar.name]: NavBar,
-    [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup,
-    [AddressList.name]: AddressList,
-    [AddressEdit.name]: AddressEdit
   },
   created() {
     this.RefeshList();
@@ -276,6 +276,6 @@ export default {
   }
 };
 </script>
+<style lang="stylus" rel="stylesheet/stylus" scoped>
 
-<style scoped lang="stylus">
 </style>

@@ -52,7 +52,7 @@ const member = {
       state.uuid = setUuid();
     },
     SET_DEFAULT_ADDRESS: state => {
-      log.info('SET_DEFAULT_ADDRESS');
+      log.info('mutations SET_DEFAULT_ADDRESS');
       log.debug('addresses length is ' + state.addresses.length);
       if (state.addresses.length > 0) {
         log.info('address is more than 0');
@@ -95,9 +95,10 @@ const member = {
         isExistUserName(name).then(data => {
           log.debug('data is ' + JSON.stringify(data));
           if (data.success) {
-            log.debug('用户名已重复');
-            toast('用户名已重复');
-            reject();
+            const e = '用户名已重复';
+            log.debug(e);
+            toast(e);
+            reject(new Error(e));
           } else {
             log.debug('用户名可以使用');
             resolve();

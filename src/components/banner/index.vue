@@ -1,13 +1,19 @@
 <template>
-  <div class="banner van-hairline--top-bottom" v-if="title" :style="{height:height + 'px'}">
-    <h1 :style="{fontSize: titleSize + 'px'}" @click="onClickTitle">{{title}}</h1>
-    <h3 v-if="subtitle" :style="{fontSize: subTitleSize + 'px'}" @click="onClickSubTitle">{{subtitle}}</h3>
+  <div class="title-Wrapper">
+    <div class="title">
+      <span :style="{fontSize: titleSize}"> 一 {{title}} 一 </span>
+    </div>
+    <div class="subtitle" :style="{fontSize: subTitle}">{{subtitle}}</div>
   </div>
 </template>
 
 <script type="text/ecmascript=6">
+// import Logger from 'chivy';
+// const log = new Logger('components/banner');
 export default {
-  name: 'Banner',
+  name: 'Tian-Banner',
+  components: {
+  },
   props: {
     title: {
       type: String
@@ -16,51 +22,32 @@ export default {
       type: String
     },
     titleSize: {
-      type: Number,
-      default: 20
+      type: String,
+      default: '28px'
     },
-    subTitleSize: {
-      type: Number,
-      default: 14
+    subTitle: {
+      type: String,
+      default: '12px'
     }
   },
-  computed: {
-    height() {
-      let height = 0;
-      if (this.$tools.isEmpty(this.subtitle)) {
-        height = 20 + this.titleSize;
-      } else {
-        height = 40 + this.titleSize + this.subTitleSize;
-      }
-      return height;
-    }
-  },
-  methods: {
-    onClickTitle() {
-      this.$emit('onClickTitle');
-    },
-    onClickSubTitle() {
-      this.$emit('onClickSubTitle');
-    }
+  data() {
+    return {
+    };
   }
 };
-</script>
 
+</script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.banner
+.title-Wrapper
+  // margin-top 1px
+  background-color white
+  padding 15px
   display flex
-  justify-content center
   flex-wrap wrap
-  height 75px
-  h1,h3
+  .title,.subtitle
     width 100%
     text-align center
-    padding 10px
-  h1
-    height 20px
-    line-height 20px
-    font-weight 900
-  h3
-    height 14px
-    line-height 14px
+  .subtitle
+    padding-top 5px
+    color gray
 </style>

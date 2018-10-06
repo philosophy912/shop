@@ -1,5 +1,5 @@
 <template>
- <div class="payment">
+ <div class="pay-Wrapper">
    <van-nav-bar
       title="请选择支付方式"
       left-arrow
@@ -65,15 +65,15 @@ export default {
       recordPrice: 0,
       alipayItem: {
         value: '支付宝',
-        img: '../../../static/img/alipay.png'
+        img: '/img/alipay.png'
       },
       wechatItem: {
         value: '微信支付',
-        img: '../../../static/img/wechat.png'
+        img: '/img/wechat.png'
       },
       memberItem: {
         value: '余额支付',
-        img: '../../../static/img/tianicon.jpg'
+        img: '/img/tianicon.jpg'
       },
       // 记录从那个地方来
       to: null
@@ -292,7 +292,7 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.payment
+.pay-Wrapper
   overflow hidden
   .title-wrapper
     display flex

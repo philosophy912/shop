@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sku-Wrapper">
     <van-sku v-if="good"
       v-model="show"
       :sku="sku"
@@ -30,7 +30,7 @@ import Vue from 'vue';
 import Logger from 'chivy';
 const log = new Logger('components/sku');
 export default {
-  name: 'Sku',
+  name: 'Tian-Sku',
   data() {
     return {
       show: false,

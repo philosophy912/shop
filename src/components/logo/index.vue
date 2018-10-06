@@ -10,13 +10,13 @@
 import Logger from 'chivy';
 const log = new Logger('components/logo');
 export default {
-  name: 'Logo',
+  name: 'Tian-Logo',
   data() {
     return {
       ratio: 2,
-      image1x: '../../../static/img/logo@1X.jpg',
-      image2x: '../../../static/img/logo@2X.jpg',
-      image3x: '../../../static/img/logo@3X.jpg'
+      image1x: '/img/logo@1X.jpg',
+      image2x: '/img/logo@2X.jpg',
+      image3x: '/img/logo@3X.jpg'
     }
   },
   created() {

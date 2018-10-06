@@ -1,5 +1,5 @@
 <template>
-  <div v-if="detail">
+  <div class="record-Wrapper" v-if="detail">
     <van-nav-bar
       title="交易完成的订单"
       left-arrow
@@ -186,33 +186,34 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 @import '../../styles/mixin.styl';
-.van-nav-bar
-  position fixed
-  left 0px
-  top 0px
-  width 100%
-.content
-  margin-top 46px
-  .icon
-    height 40px
-    font-size 40px
-    line-height 40px
-  .status
-    padding-left 10px
-    font-size 18px
-    line-height 40px
-  .order
-    font-size 10px
-    gray-color()
-  .ops-warpper
-    .van-cell
-      padding 10px 5px
-    .ops
-      display flex
-      justify-content flex-end
-      .cancel
-        margin-right 10px
-        price-color()
-      .confirm
-        price-color()
+.record-Wrapper
+  .van-nav-bar
+    position fixed
+    left 0px
+    top 0px
+    width 100%
+  .content
+    margin-top 46px
+    .icon
+      height 40px
+      font-size 40px
+      line-height 40px
+    .status
+      padding-left 10px
+      font-size 18px
+      line-height 40px
+    .order
+      font-size 10px
+      gray-color()
+    .ops-warpper
+      .van-cell
+        padding 10px 5px
+      .ops
+        display flex
+        justify-content flex-end
+        .cancel
+          margin-right 10px
+          price-color()
+        .confirm
+          price-color()
 </style>

@@ -59,7 +59,6 @@ const product = {
         category.list.forEach(good => {
           if (payload.good.id === good.id) {
             good.count = payload.count;
-            return;
           }
         });
       });

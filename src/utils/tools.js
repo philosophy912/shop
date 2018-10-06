@@ -6,6 +6,8 @@ import Logger from 'chivy';
 const log = new Logger('utils/tools');
 
 export default class Tools {
+  static getLogger = (front, methods, variable, value) => '[' + front + ']{' + methods + '}<' + variable + '(' + value + ')' + '>';
+
   // 对象属性已定义
   static isUndefined = obj => typeof (obj) === 'undefined';
   // 对象属性未定义
@@ -124,6 +126,7 @@ export default class Tools {
 
   // 设置可以修改的数据
   static setModifyData = param => {
+    log.debug('param data is ' + JSON.stringify(param));
     return {
       userId: param.userId,
       name: Tools.isNotEmpty(param.realName) ? param.realName : null,
@@ -148,7 +151,7 @@ export default class Tools {
       mobile: param(data.mobile),
       region: param(data.region),
       balance: param(data.balance),
-      birthday: param(data.birthDayStr.substring(0, 10)),
+      birthday: param(Tools.isNotEmpty(param.birthDayStr) ? param.birthDayStr.substring(0, 10): ''),
       address: param(data.address),
       point: param(data.point),
       valid: param(data.valid)
@@ -175,6 +178,30 @@ export default class Tools {
       }
     });
     return result;
+  }
+  /**
+   * 获取第一个图片分隔符;
+   */
+  static getFirstImage = image => {
+    const images = image.split(';');
+    if (images.length > 1) {
+      return images[0];
+    } else {
+      return image;
+    }
+  }
+  /**
+   * 判断是否为苹果手机
+   */
+  static isIPhone = () => {
+    const u = navigator.userAgent;
+    if (u.indexOf('Android') > -1 || u.indexOf('Adr') > -1) {
+      return false;
+    } else if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+      return true
+    } else {
+      return false
+    }
   }
 
   // 暴露操作接口给tools

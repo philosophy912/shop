@@ -20,12 +20,10 @@
 
 <script type="text/ecmascript=6">
 import { Icon } from 'vant';
+// import Logger from 'chivy';
+// const log = new Logger('components/address');
 export default {
-  name: 'Address',
-  data() {
-    return {
-    }
-  },
+  name: 'Tian-Address',
   components: {
     [Icon.name]: Icon
   },
@@ -62,7 +60,6 @@ export default {
   }
 };
 </script>
-
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 .van-contact-card
   position relative

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="field-Wrapper">
     <div  v-for="(field, index) in fields" :key="index">
       <van-field
         @blur="blur(field)"
@@ -23,7 +23,7 @@ import { isTelValid, isEmailValid, isChineseNameValid, isPwdValid } from '@/util
 import Logger from 'chivy';
 const log = new Logger('components/field');
 export default {
-  name: 'Fields',
+  name: 'Tian-Field',
   props: {
     fields: {
       type: Array
@@ -114,6 +114,5 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-
 
 </style>

@@ -14,10 +14,10 @@ Vue.config.productionTip = false;
 Vue.prototype.$tools = Tools;
 Vue.use(Toast);
 Vue.use(Lazyload);
+
 new Vue({
-  el: '#app',
   i18n,
   router,
   store,
   render: h => h(App)
-});
+}).$mount('#app');

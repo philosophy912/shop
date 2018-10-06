@@ -13,6 +13,14 @@ export const routerMap = [
         path: 'menu',
         component: () => import('@/views/main/menu/index').then(m => m.default),
         meta: {
+          keepAlive: false
+        }
+      },
+      {
+        name: 'category',
+        path: 'category',
+        component: () => import('@/views/main/category/index').then(m => m.default),
+        meta: {
           keepAlive: true
         }
       },
@@ -20,12 +28,6 @@ export const routerMap = [
         name: 'cart',
         path: 'cart',
         component: () => import('@/views/main/cart/index').then(m => m.default),
-        meta: {keepAlive: true }
-      },
-      {
-        name: 'activity',
-        path: 'activity',
-        component: () => import('@/views/main/activity/index').then(m => m.default),
         meta: {
           keepAlive: true
         }
@@ -41,12 +43,18 @@ export const routerMap = [
       {
         name: 'login',
         path: 'login',
-        component: () => import('@/views/main/login/index').then(m => m.default)
+        component: () => import('@/views/main/login/index').then(m => m.default),
+        meta: {
+          keepAlive: false
+        }
       },
       {
         name: 'register',
         path: 'register',
-        component: () => import('@/views/main/register/index').then(m => m.default)
+        component: () => import('@/views/main/register/index').then(m => m.default),
+        meta: {
+          keepAlive: false
+        }
       },
       {
         name: 'expressAddress',
@@ -118,9 +126,9 @@ export const routerMap = [
     props: true
   },
   {
-    name: '404',
-    path: '/404',
-    component: () => import('@/views/error/index').then(m => m.default)
+    name: 'test',
+    path: '/test/:id',
+    component: () => import('@/views/test/index').then(m => m.default)
   }
 ];
 

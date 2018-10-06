@@ -1,13 +1,13 @@
 <template>
-  <div class="cart">
+  <div class="cart-Wrapper">
     <div class="cart" v-if="selectFoods.length !== 0">
-      <div class="banner">
-        <van-checkbox class="title" v-model="checked" @change="onClickSelectAllCheckbox">Tian's Bakery</van-checkbox>
+      <div class="banner van-hairline--bottom">
         <span @click="onClickModifySwitch">{{editText}}</span>
       </div>
       <van-checkbox-group v-model="result">
+        <van-cell title="Tian Bakery" icon="shop"/>
         <div class="order" v-for="(product, index) in selectFoods" :key="index">
-          <productbanner showcheckbox :good="product" :edit="!edit"></productbanner>
+          <good :lazy="false" showcheckbox :good="product" :edit="!edit"></good>
         </div>
       </van-checkbox-group>
       <div class="submit">
@@ -17,10 +17,10 @@
           :price="price"
           @submit="onSubmit">
           <van-checkbox class="checkbox" v-model="checked" @change="onClickSelectAllCheckbox">全选</van-checkbox>
-        </van-submit-bar>
+        </van-submit-bar> 
       </div>
     </div>
-    <div v-else class="nocart">
+    <div class="nocart" v-else>
       <div class="text">
         <div class="title">购物车快饿瘪了~~</div>
         <div class="subtitle">请购买商品</div>
@@ -33,34 +33,34 @@
 </template>
 
 <script type="text/ecmascript=6">
-import { Checkbox, CheckboxGroup, SubmitBar, Button } from 'vant';
+import { Checkbox, CheckboxGroup, Cell, SubmitBar, Button } from 'vant';
 import { mapGetters } from 'vuex';
-import productbanner from '@/components/good';
-import Logger from 'chivy';
-const log = new Logger('views/main/cart');
+import good from '@/components/good';
+// import Logger from 'chivy';
+// const log = new Logger('views/main/cart');
 export default {
-  name: 'Cart',
+  name: 'Tian-Cart',
+  components: {
+    good,
+    [Cell.name]: Cell,
+    [Checkbox.name]: Checkbox,
+    [CheckboxGroup.name]: CheckboxGroup,
+    [SubmitBar.name]: SubmitBar,
+    [Button.name]: Button
+  },
+  activated() {
+    this.SelectFoodIds()
+  },
+  mounted() {
+    this.edit = false;
+  },
   data() {
     return {
       show: false,
       edit: false,
       checked: true,
       result: []
-    }
-  },
-  components: {
-    [Checkbox.name]: Checkbox,
-    [CheckboxGroup.name]: CheckboxGroup,
-    [SubmitBar.name]: SubmitBar,
-    [Button.name]: Button,
-    productbanner
-  },
-  activated() {
-    log.debug('activated');
-    this.SelectFoodIds()
-  },
-  mounted() {
-    this.edit = false;
+    };
   },
   computed: {
     ...mapGetters([
@@ -131,16 +131,14 @@ export default {
   }
 };
 </script>
-
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 @import '../../../styles/mixin.styl';
-.cart
-  height 100%
+.cart-Wrapper
+  background-color rgb(244, 244, 244)
   width 100%
   .cart
     .banner
-      // bgcolor()
-      height 40px
+      background-color rgb(255,255,255)
       display flex
       .title
         display inline-flex
@@ -148,11 +146,13 @@ export default {
         padding 10px 10px 10px 25px
       span
         font-size 16px
-        line-height 40px
+        line-height 30px
         margin-left auto
         margin-right 10px
     .van-checkbox-group
       margin-bottom 100px
+      .order
+        margin-top 5px
     .submit
       .van-submit-bar
         margin-bottom 50px

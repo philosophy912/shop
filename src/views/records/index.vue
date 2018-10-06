@@ -1,5 +1,5 @@
 <template>
-  <div class="order" v-if="!isLoading">
+  <div class="records-Wrapper">
     <van-nav-bar
       title="订单列表"
       left-arrow
@@ -26,11 +26,13 @@
 <script type="text/ecmascript=6">
 import { Tab, Tabs, NavBar, Icon } from 'vant';
 import { mapState } from 'vuex';
-import order from  './one';
+import order from  './order';
 import Logger from 'chivy';
 const log = new Logger('views/records');
 export default {
-  name: 'Records',
+  name: 'Tian-Records',
+  components: {
+  },
   data() {
     return {
       tabtitle: ['全部', '待付款', '待发货', '已发货', '已完成'],
@@ -129,19 +131,19 @@ export default {
   }
 };
 </script>
-
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.van-nav-bar
-  position fixed
-  left 0px
-  top 0px
-  width 100%
-.van-tabs
-  margin-top 46px
-  .no_order
-    display flex
-    justify-content center
-    padding-top 50%
-    font-size 50px
-    color rgb(140, 153, 159)
+.records-Wrapper
+  .van-nav-bar
+    position fixed
+    left 0px
+    top 0px
+    width 100%
+  .van-tabs
+    margin-top 46px
+    .no_order
+      display flex
+      justify-content center
+      padding-top 50%
+      font-size 50px
+      color rgb(140, 153, 159)
 </style>

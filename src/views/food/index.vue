@@ -1,5 +1,5 @@
 <template>
-  <div class="good">
+  <div class="food-Wrapper">
     <div class="content" v-if="good">
       <van-nav-bar
         title="商品详情"
@@ -11,7 +11,7 @@
           <img :src="image.url" width="100%" height="auto"/>
         </van-swipe-item>
       </van-swipe>
-      <nameprice class="nameprice" :name="good.name" :price="good.price" :memberPrice="good.memberPrice"></nameprice>
+      <!-- <nameprice class="nameprice" :name="good.name" :price="good.price" :memberPrice="good.memberPrice"></nameprice> -->
       <div class="desc">{{good.description}}</div>
     </div>
     <van-goods-action>
@@ -27,12 +27,12 @@
 <script type="text/ecmascript=6">
 import { GoodsAction, GoodsActionBigBtn, GoodsActionMiniBtn, Swipe, SwipeItem, NavBar } from 'vant';
 import { mapGetters } from 'vuex';
-import nameprice from '@/components/desc/nameprice';
+// import nameprice from '@/components/desc/nameprice';
 import sku from '@/components/sku';
 import Logger from 'chivy';
 const log = new Logger('views/food');
 export default {
-   name: 'Food',
+   name: 'Tian-Food',
   data() {
     return {
       to: '',
@@ -45,8 +45,8 @@ export default {
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,
     [NavBar.name]: NavBar,
-    sku,
-    nameprice
+    sku
+    /* nameprice */
   },
   props: {
     good: {
@@ -113,7 +113,7 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 @import '../../styles/mixin.styl'
-.good
+.food-Wrapper
   background-color rgb(244, 244, 244)
   margin-bottom 50px
   .content

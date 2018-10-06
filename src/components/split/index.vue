@@ -1,15 +1,15 @@
 <template>
-  <div class="split"></div>
+  <div class="split-Wrapper"></div>
 </template>
 
 <script type="text/ecmascript=6">
 export default {
-  name: 'Split',
+  name: 'Tian-Split',
 };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.split
+.split-Wrapper
   width 100%
   height 16px
   border-top 1px solid rgba(7, 17, 27, 0.1)

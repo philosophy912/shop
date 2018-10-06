@@ -1,4 +1,4 @@
-const QueryString = exports;
+const QueryString = {};
 
 QueryString.escape = encodeURIComponent;
 
@@ -87,3 +87,5 @@ QueryString.parse = function (str, sep, eq) {
   }
   return ret;
 };
+
+export default QueryString;

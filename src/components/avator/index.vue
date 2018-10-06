@@ -11,8 +11,10 @@
 </template>
 
 <script type="text/ecmascript=6">
+// import Logger from 'chivy';
+// const log = new Logger('components/avator');
 export default {
-  name: 'Avator',
+  name: 'Tian-Avator',
   props: {
     url: {
       type: String
@@ -43,7 +45,6 @@ export default {
   }
 };
 </script>
-
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 
 </style>

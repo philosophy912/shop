@@ -1,13 +1,13 @@
 <template>
-  <div class="main">
+  <div class="main-Wrapper">
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
     <router-view v-if="!$route.meta.keepAlive"></router-view>
-    <div style="height:50px"></div>
+    <div class="splite" style="height:50px" v-if="show"></div>
     <van-tabbar v-model="active">
       <van-tabbar-item icon="home" :to="{name: 'menu'}">主页</van-tabbar-item>
-      <van-tabbar-item icon="like-o" :to="{name: 'activity'}">今日活动</van-tabbar-item>
+      <van-tabbar-item icon="wap-nav" :to="{name: 'category'}">分类</van-tabbar-item>
       <van-tabbar-item icon="cart" :to="{name: 'cart'}" :info="info === 0 ? '' : info">购物车</van-tabbar-item>
       <van-tabbar-item icon="contact" :to="{name: 'member'}">我的</van-tabbar-item>
     </van-tabbar>
@@ -20,12 +20,7 @@ import { mapGetters } from 'vuex';
 import Logger from 'chivy';
 const log = new Logger('views/main');
 export default {
-  name: 'Main',
-  data() {
-    return {
-      active: 0
-    }
-  },
+  name: 'Tian-Main',
   components: {
     [Tabbar.name]: Tabbar,
     [TabbarItem.name]: TabbarItem
@@ -33,7 +28,15 @@ export default {
   computed: {
     ...mapGetters([
       'info'
-    ])
+    ]),
+    show() {
+      return this.$tools.isIPhone();
+    }
+  },
+  data() {
+    return {
+      active: 0
+    };
   },
   mounted() {
     this.Selected();
@@ -62,10 +65,11 @@ export default {
   }
 };
 </script>
-
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 @import '../../styles/mixin.styl'
-.main
+.main-Wrapper
   height 100%
   bgcolor()
+  .splite
+    background-color rgb(244,244,244)
 </style>

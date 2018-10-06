@@ -26,7 +26,7 @@
         </van-row>
       </div>
     </div>
-    <div class="foot">
+    <div class="foot van-hairline--top">
       <div class="divider">第三方登录</div>
       <div class="icon">
         <avator
@@ -51,13 +51,13 @@ export default {
   data () {
     return {
       img: {
-        url: '../../../../static/img/tian.jpg',
+        url: '/img/tian.jpg',
         width: 100,
         height: 100
       },
       third: {
         weibo: {
-          url: '../../../../static/img/weibo.png',
+          url: '/img/weibo.png',
           radius: 50
         }
       },
@@ -157,11 +157,13 @@ export default {
         .van-col
           font-size 18px
           padding 10px 0
+          font-weight 550
           display flex
         .register
           justify-content flex-end
           padding-right 10px
         .vistor
+          font-size 14px
           justify-content center
         .forget
           justify-content flex-start
@@ -174,6 +176,7 @@ export default {
       display flex
       justify-content center
     .icon
+      margin-bottom 50px
       display flex
       justify-content center
 </style>

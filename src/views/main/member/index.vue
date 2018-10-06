@@ -60,16 +60,15 @@
 <script type="text/ecmascript=6">
 import { Cell, CellGroup, Row, Col, Icon, Button  } from 'vant';
 import { mapState, mapGetters } from 'vuex';
-import round from './round';
+import round from '@/components/round';
 import avator from '@/components/avator';
-import { getMemberById, memberLogin } from '@/api/member';
 import Logger from 'chivy';
 const log = new Logger('views/main/member');
 export default {
-  name: 'Member',
+  name: 'Tian-Member',
   data() {
     return {
-      url: '../../../../static/img/avator.jpg',
+      url: '/img/avator.jpg',
       status: this.$tools.status,
       getUsername: this.$tools.getUsername
     };

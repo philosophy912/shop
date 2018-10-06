@@ -61,7 +61,7 @@ import md5 from 'blueimp-md5';
 import Logger from 'chivy';
 const log = new Logger('components/register');
 export default {
-  name: 'Register',
+  name: 'Tian-Register',
   data () {
     return {
       img: {
@@ -263,12 +263,18 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.save-first, .save-second
-  display flex
-  flex-direction column
-  justify-content center
-  align-items center
-  .van-button
-    margin 5px 0 2px 0
-
+.register-wrapper
+  position absolute
+  top 0px
+  bottom 50px
+  left 0px
+  width 100%
+  .save-first, .save-second
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    .van-button
+      margin 5px 0 2px 0
+    
 </style>

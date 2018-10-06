@@ -1,5 +1,5 @@
 <template>
-  <div class="pay">
+  <div class="order-Wrapper">
     <van-nav-bar
       title="待付款的订单"
       left-arrow
@@ -61,7 +61,7 @@ import split from '@/components/split';
 import Logger from 'chivy';
 const log = new Logger('views/order');
 export default {
-  name: 'Order',
+  name: 'Tian-Order',
   data() {
     return {
       delivertype: '自提',
@@ -172,12 +172,13 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.van-nav-bar
-  position fixed
-  left 0
-  top 0
-  width 100%
-.content
-  margin-top 46px
-  margin-bottom 50px
+.order-Wrapper
+  .van-nav-bar
+    position fixed
+    left 0
+    top 0
+    width 100%
+  .content
+    margin-top 46px
+    margin-bottom 50px
 </style>

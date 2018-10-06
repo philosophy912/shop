@@ -1,5 +1,5 @@
 <template>
-  <div class="info">
+  <div class="info-Wrapper">
     <van-nav-bar
       title="会员信息设置"
       left-arrow
@@ -50,7 +50,7 @@ import AreaList from '@/utils/area.js';
 import Logger from 'chivy';
 const log = new Logger('views/modify');
 export default {
-  name: 'Modify',
+  name: 'Tian-Modify',
   data() {
     return {
       show: {
@@ -212,7 +212,7 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.info
+.info-Wrapper
   .save
     display flex
     justify-content center
