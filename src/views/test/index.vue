@@ -13,7 +13,11 @@ export default {
   },
   beforeRouteEnter(from, to, next) {
     next(vm => {
-      log.debug(vm)
+      const url = window.location.href;
+      const params = url.split('/');
+      log.debug(params.length);
+      const id = params[params.length - 1];
+      log.debug(id);
     });
   },
   data() {

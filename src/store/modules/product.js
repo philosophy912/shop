@@ -1,9 +1,11 @@
 import Vue from 'vue';
-import { getCategoriedProducts, getRecordList, saveRecordList, alterStatus } from '@/api/product';
+import { getCategoriedProducts, getRecordList, saveRecordList, alterStatus, getProduct } from '@/api/product';
 const product = {
   state: {
     // 全部商品
     goods: [],
+    // 从服务器获取good信息
+    good: null,
     // 订单
     records: [],
     // 提交的订单 需要在真正提交订单的时候去清空
@@ -16,6 +18,9 @@ const product = {
   mutations: {
     UPDATE_GOODS: (state, payload) => {
       state.goods = payload;
+    },
+    UPDATE_GOOD: (state, payload) => {
+      state.good = payload;
     },
     UPDATE_RECORDS: (state, payload) => {
       state.records = payload;
@@ -72,6 +77,16 @@ const product = {
     }
   },
   actions: {
+    getGood: ({commit}, entityId) => {
+      console.log(JSON.stringify(entityId));
+      return new Promise(resolve => {
+        getProduct(entityId).then(data => {
+          commit('UPDATE_GOOD', data);
+          console.log('data is ' + JSON.stringify(data));
+          resolve();
+        });
+      });
+    },
     // 获取分类产品数据
     getGoods: ({ commit }) => {
       return new Promise(resolve => {

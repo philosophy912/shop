@@ -46,7 +46,7 @@ export default {
   methods: {
     jump2Category() {
       log.info('jump to category page');
-      this.$router.push({name: 'test', params: {id: 123}});
+      this.$router.push({name: 'test', params: {id: 256}});
     },
     jump2Login() {
       log.info('jump to login page');

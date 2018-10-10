@@ -26,7 +26,7 @@
 
 <script type="text/ecmascript=6">
 import { GoodsAction, GoodsActionBigBtn, GoodsActionMiniBtn, Swipe, SwipeItem, NavBar } from 'vant';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 // import nameprice from '@/components/desc/nameprice';
 import sku from '@/components/sku';
 import Logger from 'chivy';
@@ -48,22 +48,26 @@ export default {
     sku
     /* nameprice */
   },
-  props: {
+  /* props: {
     good: {
       type: Object
     }
-  },
+  }, */
   beforeRouteEnter(to, from, next) {
     next(vm => {
       log.debug('beforeRouteEnter to path is ' + to.path);
       // 保存这个路由是从那个地方来的
       vm.to = from.path;
-      if (vm.$tools.isEmpty(vm.good)) {
-        vm.$router.push({name: 'menu'});
-      }
+      const params = window.location.href.split('/');
+      const id = params[params.length - 1];
+      const entityID = {entityId: id};
+      vm.$store.dispatch('getGood', entityID);
     });
   },
   computed: {
+    ...mapState({
+      'good': state => state.product.good
+    }),
     ...mapGetters([
       'selectFoods'
     ]),
@@ -81,7 +85,7 @@ export default {
     url() {
       if (this.$tools.isEqual(this.to, '/menu')) {
         return true;
-      } else if (this.$tools.isEqual(this.to, '/activity')) {
+      } else if (this.$tools.isEqual(this.to, '/category')) {
         return false;
       } else {
         return null;

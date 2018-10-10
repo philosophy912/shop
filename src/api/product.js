@@ -2,6 +2,18 @@ import service from '@/utils/request';
 import Tools from '@/utils/tools';
 import Logger from 'chivy';
 const log = new Logger('api/product');
+// 根据商品号获取商品信息
+export const getProduct = param => {
+  const data = {
+    entityId: param.entityId
+  };
+  return service({
+    url: '/product/show/ui/getProduct.do',
+    method: 'post',
+    data
+  });
+};
+
 // 获取所有商品
 export const getCategoriedProducts = (pageSize = 1000) => {
   const data = {

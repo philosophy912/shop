@@ -137,7 +137,7 @@ export default {
     },
     jump2FoodPage(good) {
       log.debug(JSON.stringify(good));
-      this.$router.push({name: 'food', params: {good: product}});
+      this.$router.push({name: 'food', params: {id: good.id}});
     },
     onBuyClicked(good) {
       log.info('buy product');

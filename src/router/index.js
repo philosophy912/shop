@@ -65,7 +65,7 @@ export const routerMap = [
   },
   {
     name: 'food',
-    path: '/food',
+    path: '/food/:id',
     component: () => import('@/views/food/index').then(m => m.default),
     props: true,
     meta: {
