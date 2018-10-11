@@ -11,7 +11,8 @@
           <img :src="image.url" width="100%" height="auto"/>
         </van-swipe-item>
       </van-swipe>
-      <!-- <nameprice class="nameprice" :name="good.name" :price="good.price" :memberPrice="good.memberPrice"></nameprice> -->
+      <!-- TODO 需要根据当前状态返回价格 -->
+      <item :name="good.name" :price="good.price"></item>
       <div class="desc">{{good.description}}</div>
     </div>
     <van-goods-action>
@@ -27,7 +28,7 @@
 <script type="text/ecmascript=6">
 import { GoodsAction, GoodsActionBigBtn, GoodsActionMiniBtn, Swipe, SwipeItem, NavBar } from 'vant';
 import { mapGetters, mapState } from 'vuex';
-// import nameprice from '@/components/desc/nameprice';
+import item from '@/components/list/';
 import sku from '@/components/sku';
 import Logger from 'chivy';
 const log = new Logger('views/food');
@@ -45,8 +46,8 @@ export default {
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,
     [NavBar.name]: NavBar,
-    sku
-    /* nameprice */
+    sku,
+    item
   },
   /* props: {
     good: {

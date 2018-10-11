@@ -1,5 +1,5 @@
 <template>
-  <div class="good-Wrapper">
+  <div class="good-Wrapper" @click="jump2FoodPage(good)">
     <van-swipe-cell :right-width="rightwidth" :on-close="onClose">
       <van-cell-group>
         <van-cell>
@@ -121,6 +121,10 @@ export default {
     },
     name(good) {
       return this.$tools.isNotEmpty(good.name) ? good.name : good.productName;
+    },
+    jump2FoodPage(good) {
+      log.debug(JSON.stringify(good));
+      this.$router.push({name: 'food', params: {id: good.id}});
     }
   }
 };

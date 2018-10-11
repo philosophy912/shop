@@ -12,10 +12,10 @@
       subtitle="Hot-Sale Product">
     </banner>
     <div class="product-images">
-      <ul class="iamge" v-for="(image, index) in sliders" :key="index">
-        <li>
-          <img :src="Resize(image.imageUrl)" />
-          <div>{{image.name}}</div>
+      <ul class="iamge" v-for="(good, index) in sliders" :key="index">
+        <li @click="jump2FoodPage(good)">
+          <img :src="Resize(good.imageUrl)" />
+          <div>{{good.name}}</div>
         </li>
       </ul>
     </div>
@@ -24,7 +24,7 @@
       subtitle="Selection Recommendation">
     </banner>
     <div class="food-item" v-for="(good, index) in sliders" :key="index">
-      <good :showcheckbox="false" :good="good" :nameSize="20" :priceSize="24">
+      <good :showcheckbox="false" :good="good" :nameSize="20" :priceSize="18">
         <template slot="right-bottom">
           <van-button class="button" type="warning" size="small" @click.native.stop.prevent="onBuyClicked(good)">购买</van-button>
         </template>
@@ -93,6 +93,10 @@ export default {
       log.info('buy product');
       log.debug('product is ' + JSON.stringify(product));
       this.$refs.sku.SkuShow(product);
+    },
+    jump2FoodPage(good) {
+      log.debug(JSON.stringify(good));
+      this.$router.push({name: 'food', params: {id: good.id}});
     }
   }
 };

@@ -69,7 +69,7 @@ export const routerMap = [
     component: () => import('@/views/food/index').then(m => m.default),
     props: true,
     meta: {
-      keepAlive: true
+      keepAlive: false
     }
   },
   {
