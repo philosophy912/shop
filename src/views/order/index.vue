@@ -37,7 +37,7 @@
       <van-submit-bar
         button-text="提交订单"
         :price="totalPrice"
-        :disabled="address === null ? true : false"
+        :disabled="submitButtonStatus"
         @submit="onSubmit">
       </van-submit-bar>
     </div>
@@ -116,6 +116,9 @@ export default {
       'carts': state => state.product.carts,
       'deliverPrice': state => state.product.deliverPrice
     }),
+    submitButtonStatus() {
+      return this.$tools.isEmpty(this.address) ? true : false
+    },
     price() {
       let price = 0;
       let member = 0;

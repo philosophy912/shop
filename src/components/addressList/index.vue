@@ -112,6 +112,7 @@ export default {
     list() {
       const list = [];
       if (this.$tools.isNotEmpty(this.addresses) && this.addresses.length > 0) {
+        log.info('debug tag');
         // 默认选择第一个地址
         this.chosenAddressId = this.address.id;
         this.addresses.forEach(address => {

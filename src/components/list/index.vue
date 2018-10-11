@@ -35,6 +35,7 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 @import '../../styles/mixin.styl'
 .list-Wrapper
+  margin-top 5px
   background-color white
   width 100%
   .title,.info
@@ -42,6 +43,7 @@ export default {
     width 100%
     justify-content space-between
   .title
+    font-weight 800
     font-size 16px
     line-height 16px
     padding 5px

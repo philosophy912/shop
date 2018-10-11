@@ -165,17 +165,36 @@ export default {
         return;
       }
       log.info('TODO');
-      /* const register = {
-        mobile: this.page1[0].content,
-        passWd: md5(this.page1[1].content),
-        realName: this.page2[0].content,
-        birthDay: this.$tools.isNotEmpty(this.page2[1].content) ? this.$tools.date2Long(this.page2[1].content) : '',
-        genderStr: this.$tools.sex(this.page2[2].content),
-        email: this.page2[3].content,
-        wechat: this.page2[4].content,
-        region: this.page2[5].content,
-        address: this.page2[6].content
-      }; */
+      //  同时修改两个接口
+      log.debug(JSON.stringify(this.fields))
+      // modifyBasicInfo
+      const baisc = {
+        memberId: this.member.id
+      };
+      if (this.$tools.isNotEmpty(this.fields[0].content)) {
+        baisc.name = this.fields[0].content;
+      }
+      if (this.$tools.isNotEmpty(this.fields[2].content)) {
+        basic.genderStr = this.$tools.sex(this.fields[2].content);
+      }
+      if (this.$tools.isNotEmpty(this.fields[1].content)) {
+        basic.birthDay = this.$tools.date2Long(this.fields[1].content);
+      }
+      if (this.$tools.isNotEmpty(this.fields[4].content)) {
+        basic.region = this.fields[4].content;
+      }
+      if (this.$tools.isNotEmpty(this.fields[5].content)) {
+        basic.address = this.fields[5].content;
+      }
+      const member = {
+        id: this.member.id,
+      };
+      if (this.$tools.isNotEmpty(this.fields[3].content)) {
+        member.email = this.fields[3].content;
+      }
+      this.$store.dispatch('modify', {baisc, member}).then(() => {
+        log.debug('modify success');
+      });
     },
     _isContentNotEmpty(page) {
       let result = true;

@@ -157,7 +157,6 @@ export default {
         .van-col
           font-size 18px
           padding 10px 0
-          font-weight 550
           display flex
         .register
           justify-content flex-end

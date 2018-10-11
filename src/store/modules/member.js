@@ -73,6 +73,12 @@ const member = {
     }
   },
   actions: {
+    // TODO
+    modify({commit}, member) {
+      return new Promise(resolve => {
+        resolve();
+      });
+    },
     // 登陆成功后
     /**
      * 登陆成功后需要获取用户基本信息并填充到数据中
