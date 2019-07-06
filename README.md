@@ -1,26 +1,13 @@
-# cafe
+# 前端项目 Coffee
 
-## Project setup
-```
-npm install
-```
+------
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+纯前端项目
 
-### Compiles and minifies for production
-```
-npm run build
+采用Vue框架进行开发，并使用vant开源框架进行软件开发
+
+后台为自己的代码。
+
 ```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
 ```
